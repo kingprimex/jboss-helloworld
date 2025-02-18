@@ -16,26 +16,8 @@ jobs:
       - name: Set up JDK 7 (AdoptOpenJDK)
         uses: kingprimex/maven-java@maven3-java7
         with:
-          java-version: '7'
-          distribution: 'adopt'  # Preferred distribution
-          cache: maven
+          command: clean install
 
-      # OR, if AdoptOpenJDK doesn't work reliably, try Zulu:
-
-      #- name: Set up JDK 7 (Zulu)
-      #  uses: actions/setup-java@v3
-      #  with:
-      #    java-version: '7'
-      #    distribution: 'zulu'
-      #    cache: maven
-
-
-      - name: Show Java Version
-        run: java -version
-
-      - name: Build with Maven
-          with:
-            command: clean install
 
       - name: Upload Artifact (WAR file)
         uses: actions/upload-artifact@v4
