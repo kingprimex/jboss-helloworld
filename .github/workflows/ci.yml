@@ -37,7 +37,7 @@ jobs:
         run: mvn clean install -DskipTests=true
 
       - name: Upload Artifact (WAR file)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jboss-helloworld.war
           path: target/jboss-helloworld.war  # Adjust path if needed
